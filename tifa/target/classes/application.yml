@@ -1,0 +1,35 @@
+book: 
+  name: violetAndLove
+  author: xujun
+#配置日志级别
+logging: 
+  file: D:/mylog/log.log
+  #配置日志文件
+  level: 
+    org: 
+      springframework: 
+        web: DEBUG
+#debug: true
+spring: 
+#profiles配置，针对不同开发环境的不同配置
+  profiles:
+    active: dev
+    #进行热部署需要的配置
+  devtools: 
+    restart: 
+      enabled: true
+# mysql 属性配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/violet
+    username: root
+    password: 253613
+  thymeleaf: #配置thymeleaf模板引擎
+    cache: false #关闭缓存
+    prefix: classpath:/static/views/ #添加路径前缀
+    mode: LEGACYHTML5 #模板支持html5
+  jpa:
+    hibernate:
+      #ddl-auto: create #ddl-auto:设为create表示每次都重新建表
+      ddl-auto: update #ddl-auto:设为update表示每次都不会重新建表
+    show-sql: true
