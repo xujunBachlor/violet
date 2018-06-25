@@ -25,9 +25,15 @@ spring:
     username: root
     password: 253613
   thymeleaf: #配置thymeleaf模板引擎
-    cache: false #关闭缓存
-    prefix: classpath:/static/views/ #添加路径前缀
-    mode: LEGACYHTML5 #模板支持html5
+    cache: false
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    encoding: UTF-8
+    excluded-view-names: 
+    mode: LEGACYHTML5
+    prefix: classpath:/templates/
+    suffix: .html
   jpa:
     hibernate:
       #ddl-auto: create #ddl-auto:设为create表示每次都重新建表
