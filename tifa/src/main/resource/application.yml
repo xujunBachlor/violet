@@ -19,6 +19,10 @@ spring:
     restart: 
       enabled: true
 # mysql 属性配置
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/templates/,classpath:/public/
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/violet
